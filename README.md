@@ -44,6 +44,18 @@ In theory both backends should work on Windows, but the Makefile is missing the 
 
 _todo_
 
+### DragonFlyBSD
+
+```
+# for SDL2 backend
+pkg install gmake glew sdl2 mesa-dri-gallium
+gmake sdl
+# fetch the .zip required and unzip it
+# Start the game directly from the console with
+setenv XDG_RUNTIME_DIR /tmp # or wherever you think it should be
+./wipegame
+```
+
 
 ### WASM
 

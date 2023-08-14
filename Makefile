@@ -50,6 +50,15 @@ else ifeq ($(UNAME_S), Linux)
 	L_FLAGS_SDL = -lSDL2
 	L_FLAGS_SOKOL = -lX11 -lXcursor -pthread -lXi -ldl -lasound
 
+# DragonFly --------------------------------------------------------------------
+
+else ifeq ($(UNAME_S), DragonFly)
+	ifeq ($(RENDERER), GL)
+		C_FLAGS := $(C_FLAGS)  -I/usr/local/include
+		L_FLAGS := $(L_FLAGS)  -L/usr/local/lib -lGLEW -lGL
+	endif
+
+	L_FLAGS_SDL = -lSDL2
 
 # Windows ----------------------------------------------------------------------
 
